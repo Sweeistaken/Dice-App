@@ -1,0 +1,1 @@
+Dice App is a simple Dice roller for Android.
