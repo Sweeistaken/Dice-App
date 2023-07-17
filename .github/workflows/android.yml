@@ -1,4 +1,5 @@
 name: Auto Build
+run-name: ${{ github.actor }} started auto-build
 
 on:
   push:
@@ -8,7 +9,7 @@ on:
 
 jobs:
   build:
-
+    name: Build APK
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +25,19 @@ jobs:
       run: chmod +x gradlew
     - name: Create APK
       run: ./gradlew assembleRelease
+      
+    - name: Rename APK
+      run: mv ./app/release/app-release.apk ./DiceApp-autobuild.apk
+    
+    - name: Build & test
+      with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "autobuild"
+          prerelease: true
+          title: "Auto Build release."
+          files: |
+            DiceApp-autobuild.apk
+    - name: Clean up
+      run: ./gradlew clean :build
+    - name: Clean up 2
+      run: rm DiceApp-autobuild.apk
