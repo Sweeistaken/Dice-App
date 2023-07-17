@@ -9,6 +9,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var random = 0
         val sides: EditText = findViewById(R.id.editTextNumber2) //Define the Sides TextBox
         val dices: EditText = findViewById(R.id.editTextNumber) //Define the Sides TextBox
         val rollButton: Button = findViewById(R.id.button) //Defines the Roll Button
@@ -24,15 +25,14 @@ class MainActivity : AppCompatActivity() {
                 image3.visibility = View.INVISIBLE // :End
                 val abc = try {sides.text.toString().toInt()}catch (e:Exception){0} //Turns the value of the sides TextBox to int\
                 val resultTextView: TextView = findViewById(R.id.vales) //Defines the Result Text
-                var ee = 0 //ee is the random number
                 var vals = listOf((1..abc).random()) //List of values
                 for (dice in 2..dices.text.toString().toInt()) { //for loop to make random numbers
-                    ee = (1..abc).random()
-                    vals = vals.plus(ee)
+                    random = (1..abc).random()
+                    vals = vals.plus(random)
                 }
                 var lists = "" //lists is the string to compile the list to a string
                 if (vals.count() == 1) { //Validates the requirements to use images
-                    if (images.isChecked and (dices.text.toString() == "1") and (sides.text.toString().toString().toInt() <= 10)) { //makes image 1 visible
+                    if (images.isChecked and (dices.text.toString() == "1") and (sides.text.toString().toInt() <= 10)) { //makes image 1 visible
                         image.visibility = View.VISIBLE
                         image.setImageResource(ones.get(vals.get(0) - 1))
                     }else {
@@ -45,8 +45,8 @@ class MainActivity : AppCompatActivity() {
 
                     lists = vals.get(0).toString()
                 }else {
-                    if (images.isChecked and (dices.text.toString() == "2") and (sides.text.toString().toString().toInt() <= 10)) { //makes image 1 and 2 visible and sets it to their respective images
-                        if (sides.text.toString().toString().toInt() < 11) {
+                    if (images.isChecked and (dices.text.toString() == "2") and (sides.text.toString().toInt() <= 10)) { //makes image 1 and 2 visible and sets it to their respective images
+                        if (sides.text.toString().toInt() < 11) {
                             image.visibility = View.VISIBLE
                             image.setImageResource(ones.get(vals.get(1) - 1))
                             image2.visibility = View.VISIBLE
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
                             image.setImageResource(R.drawable.nope)
                         }
 
-                    }else if (images.isChecked and (dices.text.toString() == "3") and (sides.text.toString().toString().toInt() < 11)) { //makes all images visible and sets it to their respective images
-                        if (sides.text.toString().toString().toInt() < 11) {
+                    }else if (images.isChecked and (dices.text.toString() == "3") and (sides.text.toString().toInt() < 11)) { //makes all images visible and sets it to their respective images
+                        if (sides.text.toString().toInt() < 11) {
                             image.visibility = View.VISIBLE
                             image.setImageResource(ones.get(vals.get(1) - 1))
                             image2.visibility = View.VISIBLE
