@@ -31,7 +31,7 @@ jobs:
     
     - name: Build & test
       run: echo hello
-    - uses: "marvinpinto/action-automatic-releases@autobuild"
+    - uses: "marvinpinto/action-automatic-releases@latest"
       with:
           repo_token: "${{ secrets.TOKEN }}"
           automatic_release_tag: "autobuild"
