@@ -1,5 +1,5 @@
 name: Auto Build
-run-name: ${{ github.actor }} started auto-build
+run-name: ${{ github.actor }} started auto-build.
 
 on:
   push:
