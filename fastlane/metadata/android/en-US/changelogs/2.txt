@@ -1,0 +1,4 @@
+What's new in version 1.1:
+Bug and Crash fixes.
+Added images for 10-side die.
+WARNING: new keys have been generated for 1.2, please uninstall old versions before upgrading to 1.2 beta 3

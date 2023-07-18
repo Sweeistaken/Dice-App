@@ -1,0 +1,5 @@
+what's new in 1.2 Beta 3 so far:
+Removed warnings from the core Koltin file.
+cleaned up the app.
+actually added the new version number to android's configuration files.
+generated new keys.
