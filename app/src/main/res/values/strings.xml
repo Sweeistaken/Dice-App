@@ -2,7 +2,7 @@
     <string name="app_name">Dice App</string>
     <string name="start_text">Roll the Dice!</string>
     <string name="button_text">Roll</string>
-    <string name="start_dice" />
+    <string name="start_dice" >1</string>
     <string name="start_sides">6</string>
     <string name="placeholder">Dice picture.</string>
     <string name="Dice">Dice</string>
