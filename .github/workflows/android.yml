@@ -26,7 +26,7 @@ jobs:
     - name: Create APK
       run: ./gradlew assembleDebug
     - name: find APK
-      run: ls
+      run: ls -R
     - name: Rename APK
       run: mv ./app-release.apk ./DiceApp-autobuild.apk
     
