@@ -25,6 +25,8 @@ jobs:
       run: chmod +x gradlew
     - name: Create APK
       run: ./gradlew assembleDebug
+    - name: show APK
+      run: ls ./build/outputs/apk/
     - name: find APK
       run: ls -R
     - name: Rename APK
@@ -38,6 +40,7 @@ jobs:
           title: "Auto Build release (Experimental)"
           files: |
             DiceApp-autobuild.apk
+    
     - name: Clean up
       run: ./gradlew clean :build
     - name: Clean up 2
