@@ -25,10 +25,8 @@ jobs:
       run: chmod +x gradlew
     - name: Create APK
       run: ./gradlew assembleDebug
-    - name: show APK
-      run: ls -R ./build/
     - name: Rename APK
-      run: mv ./app-release.apk ./DiceApp-autobuild.apk
+      run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
     
     - uses: "marvinpinto/action-automatic-releases@latest"
       with:
