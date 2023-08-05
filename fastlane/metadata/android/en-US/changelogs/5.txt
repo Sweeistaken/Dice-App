@@ -1,0 +1,2 @@
+What's new in this Repackage:
+updated Gradle Wrapper in Android Studio for eligibility on F-Droid

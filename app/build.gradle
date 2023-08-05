@@ -11,8 +11,8 @@ android {
         applicationId "com.pythonanywhere.swee.diceapp"
         minSdk 19
         targetSdk 33
-        versionCode 4
-        versionName "1.2-beta4-git"
+        versionCode 5
+        versionName "1.2-beta4-repackaged-git"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
