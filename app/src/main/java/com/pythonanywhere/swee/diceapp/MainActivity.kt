@@ -6,6 +6,8 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    fun toast(message: CharSequence) =
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,9 +25,16 @@ class MainActivity : AppCompatActivity() {
                 image.visibility = View.INVISIBLE // Hides the images first:
                 image2.visibility = View.INVISIBLE // :
                 image3.visibility = View.INVISIBLE // :End
-                val abc = try {sides.text.toString().toInt()}catch (e:Exception){0} //Turns the value of the sides TextBox to int\
+                val abc = try {sides.text.toString().toInt()}catch (e:Exception){0} //Turns the value of the sides TextBox to int
+                val abcd = try {dices.text.toString().toInt()}catch (e:Exception){0} //Turns the value of the dice TextBox to int
                 val resultTextView: TextView = findViewById(R.id.vales) //Defines the Result Text
                 var vals = listOf((1..abc).random()) //List of values
+                if (abcd > 30) {
+                    toast("The dice value is abnormally big! You will get visual issues!")
+                }
+                if (abc > 500) {
+                    toast("The sides value is abnormally big! You will get visual issues and/or lag!")
+                }
                 for (dice in 2..dices.text.toString().toInt()) { //for loop to make random numbers
                     random = (1..abc).random()
                     vals = vals.plus(random)
