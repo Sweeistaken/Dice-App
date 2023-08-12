@@ -1,0 +1,11 @@
+What's new in version 1.2:
+New icon
+Fixed layout warnings such as Touch target size, Keyboard focus, and Hardcoded text.
+Removed the TODO added by Android studio.
+Removed warnings from the core Koltin file.
+cleaned up the app.
+actually added the new version number to android's configuration files.
+generated new keys.
+Fixed dice counter starting blank.
+Fixed gradle.
+updated Gradle Wrapper in Android Studio for eligibility on F-Droid
