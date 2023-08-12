@@ -9,4 +9,6 @@
     <string name="Sides">Sides</string>
     <string name="checkbox1">Images</string>
     <string name="sides_hint">Number of side on all dice</string>
+    <string name="sideserror">Too many sides.</string>
+    <string name="diceerror">Too many dice.</string>
 </resources>

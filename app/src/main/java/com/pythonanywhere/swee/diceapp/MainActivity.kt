@@ -89,10 +89,10 @@ class MainActivity : AppCompatActivity() {
                 resultTextView.text = lists // sets the textView to the compiled list
             }catch(e: NoSuchElementException){
                 val resultTextView: TextView = findViewById(R.id.vales)
-                resultTextView.text = "Too much Sides"
+                resultTextView.text = getString(R.string.sideserror)
             }catch(e: java.lang.NumberFormatException){
                 val resultTextView: TextView = findViewById(R.id.vales)
-                resultTextView.text = "Too much Dice"
+                resultTextView.text = getString(R.string.diceerror)
             }
         }
     }
