@@ -39,6 +39,7 @@ jobs:
     - name: Clean
       run: rm DiceApp-autobuild.apk
   clean:
+    needs: build
     name: Clean build
     runs-on: windows-latest
 
