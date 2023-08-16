@@ -39,11 +39,11 @@ jobs:
     - name: Clean
       run: rm DiceApp-autobuild.apk
   clean:
+    needs: build
     name: Clean build
     runs-on: windows-latest
 
     steps:
-    - needs: build
     - uses: actions/checkout@v3
     - name: set up JDK 11
       uses: actions/setup-java@v3
