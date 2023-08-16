@@ -52,4 +52,4 @@ jobs:
         distribution: 'temurin'
         cache: gradle
     - name: Now clean build
-      run: .\gradle.bat clean
+      run: .\gradlew.bat clean
