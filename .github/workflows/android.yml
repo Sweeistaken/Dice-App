@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out
+    - name: Check out Repository
       uses: actions/checkout@v3
-    - name: set up JDK
+    - name: set up Termuin JDK 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
@@ -25,6 +25,8 @@ jobs:
 
     - name: Give Ubuntu permission
       run: chmod +x gradlew
+    - name: Clean to prevent errors from OneDrive
+      run: ./gradlew Clean
     - name: Assemble APK
       run: ./gradlew assembleDebug
     - name: Rename APK
@@ -43,9 +45,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Check out
+    - name: Check out Repository
       uses: actions/checkout@v3
-    - name: set up JDK
+    - name: set up Termuin JDK 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
