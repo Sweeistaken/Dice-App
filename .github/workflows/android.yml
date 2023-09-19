@@ -10,26 +10,27 @@ on:
 jobs:
   build:
     needs: verify
-    name: Build APK
+    name: Start autobuild
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 11
+    - name: Check out
+      uses: actions/checkout@v3
+    - name: set up JDK
       uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant execute permission for gradlew
+    - name: Grant Gradle permission
       run: chmod +x gradlew
     - name: Create APK
       run: ./gradlew assembleDebug
     - name: Rename APK
       run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
-    
-    - uses: "marvinpinto/action-automatic-releases@latest"
+    - name: Publish release
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
           repo_token: "${{ secrets.TOKEN }}"
           automatic_release_tag: "autobuild"
@@ -37,19 +38,18 @@ jobs:
           title: "Auto Build release (Experimental)"
           files: |
             DiceApp-autobuild.apk
-    - name: Clean
-      run: rm DiceApp-autobuild.apk
   verify:
     name: Verify that build is working
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: set up JDK 11
+    - name: Check out
+      uses: actions/checkout@v3
+    - name: set up JDK
       uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
     - name: Try to build app
-      run: .\gradlew.bat build
+      run: ./gradlew build
