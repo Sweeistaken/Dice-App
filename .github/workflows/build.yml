@@ -42,7 +42,7 @@ jobs:
             DiceApp-autobuild.apk
   verify:
     name: Verify that build is working
-    runs-on: windows-latest
+    runs-on: windows-2019
 
     steps:
     - name: Check out Repository
@@ -54,6 +54,6 @@ jobs:
         distribution: 'temurin'
         cache: gradle
     - name: Clean to prevent errors from OneDrive
-      run: ./gradlew clean
+      run: .\gradlew.bat clean
     - name: Try to build app
-      run: .\gradlew.bat build
+      run: .\gradlew.bat build --scan
