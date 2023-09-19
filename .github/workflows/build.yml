@@ -41,9 +41,9 @@ jobs:
           files: |
             DiceApp-autobuild.apk
   verify:
-    name: Verify that build is working
+    name: "setup: Scan project for Errors"
     runs-on: windows-2019
-
+    needs: setup
     steps:
     - name: Check out Repository
       uses: actions/checkout@v3
@@ -57,3 +57,14 @@ jobs:
       run: .\gradlew.bat clean
     - name: Try to build app
       run: .\gradlew.bat build --scan
+  setup:
+    runs-on: ubuntu-latest
+    name: "setup: Check for required files"
+
+    steps:
+    - name: Check out Repository
+      uses: actions/checkout@v3
+    - name: "'gradlew' for ubuntu"
+      run: cat gradlew
+    - name: "'graldew.bat' for windows"
+      run: cat gradlew.bat
