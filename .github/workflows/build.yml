@@ -29,6 +29,8 @@ jobs:
       run: ./gradlew clean
     - name: Assemble APK
       run: ./gradlew assembleDebug
+    - name: Stop daemon
+      run: ./gradlew --stop
     - name: Rename APK
       run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
     - name: Publish release
@@ -57,6 +59,8 @@ jobs:
       run: .\gradlew.bat clean
     - name: Try to build app
       run: .\gradlew.bat build --scan
+    - name: Stop daemon
+      run: .\gradlew.bat --stop
   setup:
     runs-on: ubuntu-latest
     name: "setup: Check for required files"
@@ -68,3 +72,7 @@ jobs:
       run: cat gradlew
     - name: "'graldew.bat' for windows"
       run: cat gradlew.bat
+    - name: "Main kotlin file"
+      run: cat app/src/main/java/com/pythonanywhere/swee/diceapp/MainActivity.kt
+    - name: "Android Manifest"
+      run: cat app/src/main/AndroidManifest.xml
