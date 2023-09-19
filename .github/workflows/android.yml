@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    needs: verify
     name: Build APK
     runs-on: ubuntu-latest
 
@@ -38,9 +39,8 @@ jobs:
             DiceApp-autobuild.apk
     - name: Clean
       run: rm DiceApp-autobuild.apk
-  clean:
-    needs: build
-    name: Clean build
+  verify:
+    name: Verify that build is working
     runs-on: windows-latest
 
     steps:
@@ -51,5 +51,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-    - name: Now clean build
-      run: .\gradlew.bat clean
+    - name: Try to build app
+      run: .\gradlew.bat build
