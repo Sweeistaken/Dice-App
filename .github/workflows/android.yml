@@ -40,7 +40,7 @@ jobs:
             DiceApp-autobuild.apk
   verify:
     name: Verify that build is working
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Check out
@@ -51,7 +51,5 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-    - name: Give Ubuntu permission
-      run: chmod +x gradlew
     - name: Try to build app
-      run: ./gradlew build
+      run: .\gradlew.bat build
