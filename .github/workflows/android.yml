@@ -23,9 +23,9 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Grant Gradle permission
+    - name: Give Ubuntu permission
       run: chmod +x gradlew
-    - name: Create APK
+    - name: Assemble APK
       run: ./gradlew assembleDebug
     - name: Rename APK
       run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
@@ -51,5 +51,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
+    - name: Give Ubuntu permission
+      run: chmod +x gradlew
     - name: Try to build app
       run: ./gradlew build
