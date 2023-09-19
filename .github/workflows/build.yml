@@ -1,4 +1,4 @@
-name: Auto Build
+name: Auto Builder
 run-name: ${{ github.actor }} started auto-build.
 
 on:
@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     needs: verify
-    name: Start autobuild
+    name: Now building Application
     runs-on: ubuntu-latest
 
     steps:
@@ -26,7 +26,7 @@ jobs:
     - name: Give Ubuntu permission
       run: chmod +x gradlew
     - name: Clean to prevent errors from OneDrive
-      run: ./gradlew Clean
+      run: ./gradlew clean
     - name: Assemble APK
       run: ./gradlew assembleDebug
     - name: Rename APK
@@ -53,5 +53,7 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
+    - name: Clean to prevent errors from OneDrive
+      run: ./gradlew clean
     - name: Try to build app
       run: .\gradlew.bat build
