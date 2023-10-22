@@ -1,5 +1,5 @@
 # Dice App
-A simple Dice roller for Android
+<img alt="A simple Dice Roller for Android" src="https://img.shields.io/badge/A%20simple%20Dice%20Roller%20for-Android-green?style=flat-square&logo=android">
 
 <img src="https://img.shields.io/github/license/sweeistaken/Dice-App"/> <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/sweeistaken/Dice-App/total">
 <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/sweeistaken/Dice-App/build.yml">
