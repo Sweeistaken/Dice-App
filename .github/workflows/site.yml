@@ -1,6 +1,6 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy website
-
+run-name: Deploying website..
 on:
   # Runs on pushes targeting the default branch
   push:
