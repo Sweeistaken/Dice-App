@@ -43,7 +43,7 @@ jobs:
         tag: autobuild
         files: |
             DiceApp-autobuild.apk
-        rewrite: true
+        rewrite: false
   setup:
     runs-on: ubuntu-latest
     name: "setup: Check for required files"
