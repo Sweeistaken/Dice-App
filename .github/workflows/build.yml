@@ -35,15 +35,14 @@ jobs:
     - name: Rename APK
       run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
     - name: Publish release
-      uses: milankomaj/releases-x@v0.1
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        target: master
-        title: AutoBuild
-        tag: autobuild
-        files: |
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "autobuild"
+          prerelease: true
+          title: "Auto Build release (Experimental)"
+          files: |
             DiceApp-autobuild.apk
-        rewrite: false
   setup:
     runs-on: ubuntu-latest
     name: "setup: Check for required files"
