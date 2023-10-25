@@ -39,8 +39,8 @@ jobs:
       with:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         target: master
-        title: "Auto Build Release"
-        tag: "autobuild"
+        title: AutoBuild
+        tag: autobuild
         files: |
             DiceApp-autobuild.apk
         rewrite: true
