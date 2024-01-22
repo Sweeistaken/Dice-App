@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 val resultTextView: TextView = findViewById(R.id.vales)
                 var values = listOf((1..temp1).random())
                 if (temp2 > 30) {
-                    toast("The dice value is abnormally big! You will get visual issues!")
+                    toast("The dice value is abnormally big! You will get visual issues and/or lag!")
                 }
                 if (temp1 > 500) {
                     toast("The sides value is abnormally big! You will get visual issues and/or lag!")
@@ -90,11 +90,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 resultTextView.text = lists
             }catch(e: NoSuchElementException){
-                val resultTextView: TextView = findViewById(R.id.vales)
-                resultTextView.text = getString(R.string.sideserror)
+                toast(getString(R.string.sideserror))
             }catch(e: java.lang.NumberFormatException){
-                val resultTextView: TextView = findViewById(R.id.vales)
-                resultTextView.text = getString(R.string.diceerror)
+                toast(getString(R.string.diceerror))
             }
         }
     }
