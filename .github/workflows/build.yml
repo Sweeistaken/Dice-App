@@ -35,9 +35,9 @@ jobs:
     - name: Rename APK
       run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
     - name: Get MD5 of file
-      run: md5sum ./DiceApp-autobuild.apk > md5sum.md5
+      run: md5sum DiceApp-autobuild.apk > md5sum.md5
     - name: Check MD5 file
-      run: md5sum -c ./md5sum.md5
+      run: md5sum -c md5sum.md5
     - name: Publish release
       uses: Sweeistaken/sweelease@1.0
       with:
