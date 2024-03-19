@@ -12,7 +12,7 @@ jobs:
   build:
     needs: setup
     name: Now building Application
-    runs-on: Linux
+    runs-on: Build
 
     steps:
     - name: Check out Repository
