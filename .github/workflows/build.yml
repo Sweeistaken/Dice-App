@@ -12,7 +12,7 @@ jobs:
   build:
     needs: setup
     name: Now building Application
-    runs-on: Build
+    runs-on: ubuntu-latest
 
     steps:
     - name: Check out Repository
@@ -49,7 +49,7 @@ jobs:
             DiceApp-autobuild.apk
             md5sum.md5
   setup:
-    runs-on: Linux
+    runs-on: ubuntu-latest
     name: "setup: Check for required files"
 
     steps:
