@@ -1,5 +1,4 @@
 # Dice App
-WARNING: This Repo is about to move to [SweeZero/DiceApp](https://github.com/SweeZero/DiceApp) next month.
 
 <img alt="A simple Dice Roller for Android" src="https://img.shields.io/badge/A%20simple%20Dice%20Roller%20for-Android-green?style=flat-square&logo=android">
 
