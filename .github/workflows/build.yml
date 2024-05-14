@@ -6,8 +6,6 @@ on:
     paths:
      - app/
      - .github/workflows/build.yml
-  pull_request:
-    branches: [ "master" ]
   workflow_dispatch:
 
 jobs:
