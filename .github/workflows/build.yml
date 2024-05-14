@@ -36,7 +36,7 @@ jobs:
     - name: Verifying checksum
       run: md5sum -c md5sum.md5
     - name: Uploading
-      uses: Sweeistaken/sweelease@latest
+      uses: Sweeistaken/sweelease@v1.1
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "autobuild"
