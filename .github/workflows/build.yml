@@ -15,6 +15,7 @@ jobs:
     needs: setup
     name: Now building Application
     runs-on: ubuntu-latest
+    environment: Production
 
     steps:
     - uses: actions/checkout@v3
@@ -23,14 +24,22 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: gradle
-    - run: chmod +x gradlew
-    - run: ./gradlew clean
-    - run: ./gradlew assembleDebug
-    - run: ./gradlew --stop
-    - run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
-    - run: md5sum DiceApp-autobuild.apk > md5sum.md5
-    - run: md5sum -c md5sum.md5
-    - uses: Sweeistaken/sweelease@1.0
+    - name: Prepare (1/2) Allowing permissions
+      run: chmod +x gradlew
+    - name: Prepare (2/2) Cleaning
+      run: ./gradlew clean
+    - name: Build
+      run: ./gradlew assembleDebug
+    - name: Stop Gradle daemon
+      run: ./gradlew --stop
+    - name: Moving built APK
+      run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
+    - name: Creating checksum
+      run: md5sum DiceApp-autobuild.apk > md5sum.md5
+    - name: Verifying checksum
+      run: md5sum -c md5sum.md5
+    - name: Uploading
+      uses: Sweeistaken/sweelease@latest
       with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "autobuild"
