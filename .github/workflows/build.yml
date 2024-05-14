@@ -12,7 +12,7 @@ jobs:
   build:
     name: Build & Publish
     runs-on: ubuntu-latest
-    environment: Production
+    environment: Autobuild
 
     steps:
     - uses: actions/checkout@v4.1.5
