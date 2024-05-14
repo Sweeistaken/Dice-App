@@ -10,8 +10,7 @@ on:
 
 jobs:
   build:
-    needs: setup
-    name: Now building Application
+    name: Build & Publish
     runs-on: ubuntu-latest
     environment: Production
 
@@ -46,19 +45,3 @@ jobs:
           files: |
             DiceApp-autobuild.apk
             md5sum.md5
-  setup:
-    runs-on: ubuntu-latest
-    name: "setup: Check for required files"
-    environment: verifier
-
-    steps:
-    - name: Check out Repository
-      uses: actions/checkout@v4.1.5
-    - name: "'gradlew' for ubuntu"
-      run: cat gradlew
-    - name: "'graldew.bat' for windows"
-      run: cat gradlew.bat
-    - name: "Main kotlin file"
-      run: cat app/src/main/java/com/pythonanywhere/swee/diceapp/MainActivity.kt
-    - name: "Android Manifest"
-      run: cat app/src/main/AndroidManifest.xml
