@@ -51,6 +51,7 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     name: "setup: Check for required files"
+    environment: verifier
 
     steps:
     - name: Check out Repository
