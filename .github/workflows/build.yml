@@ -26,6 +26,8 @@ jobs:
       run: ./gradlew clean
     - name: Build
       run: ./gradlew assembleDebug
+      env:
+        ANDROID_HOME: /home/swee/android-sdk
     - name: Moving built APK
       run: mv ./app/build/outputs/apk/debug/app-debug.apk ./DiceApp-autobuild.apk
     - name: Creating checksum
