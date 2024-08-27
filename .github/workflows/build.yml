@@ -3,9 +3,8 @@ run-name: ${{ github.actor }} started auto-build.
 
 on:
   push:
-    paths:
-     - app/
-     - .github/workflows/build.yml
+    paths-ignore:
+     - .github/website/
   workflow_dispatch:
 
 jobs:
