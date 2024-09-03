@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build & Publish
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     environment: Autobuild
 
     steps:
@@ -20,12 +20,10 @@ jobs:
         java-version: '22'
         distribution: 'temurin'
         cache: gradle
-    - name: Prepare (1/2) Allowing permissions
+    - name: Allowing permissions
       run: chmod +x gradlew
-    - name: Prepare (2/2) Cleaning
-      run: ./gradlew clean
     - name: Build
-      run: ./gradlew assembleDebug --debug --info --stacktrace
+      run: ./gradlew clean assembleDebug --debug --info --stacktrace
       env:
         ANDROID_HOME: /home/swee/android-sdk
     - name: Stop daemon
