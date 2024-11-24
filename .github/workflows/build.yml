@@ -4,7 +4,7 @@ run-name: ${{ github.actor }} started auto-build.
 on:
   push:
     paths-ignore:
-     - .github/website/
+     - .github/website/*
   workflow_dispatch:
 
 jobs:
