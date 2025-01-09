@@ -24,8 +24,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build
       run: ./gradlew clean assembleDebug --debug --info --stacktrace
-      env:
-        ANDROID_HOME: /home/swee/android-sdk
     - name: Stop daemon
       run: ./gradlew --stop
     - name: Moving built APK
