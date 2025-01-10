@@ -10,6 +10,6 @@
   ],
   "start_url": "/pwa.html",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#303030",
   "background_color": "#303030"
 }
