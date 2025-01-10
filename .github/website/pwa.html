@@ -147,12 +147,13 @@ btn.onclick = function (e) {
     }, 1000);
 };
 function generate() {
-  let dice = document.getElementById("dice").value
-  let sides = document.getElementById("values").value
-  var text = ""
-  var value = Math.floor(Math.random() * (sides - 1) + min)
-  text += "${value} "
-  document.getElementById("value").innerHTML = text
+  console.info("Generating new roll...");
+  let dice = document.getElementById("dice").value;
+  let sides = document.getElementById("values").value;
+  var text = "";
+  var value = Math.floor(Math.random() * (sides - 1) + min);
+  text += "${value} ";
+  document.getElementById("value").innerHTML = text;
 };
 </script>
 </body>
