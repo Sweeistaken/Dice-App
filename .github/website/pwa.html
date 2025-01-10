@@ -167,10 +167,10 @@ function gener() {
   document.getElementById("dice2").hidden = true;
   document.getElementById("dice3").hidden = true;
   if (images) {
-     document.getElementById("dice1").src = `/$(values[0]).png`;
+     document.getElementById("dice1").src = `/${values[0]}.png`;
      document.getElementById("dice1").hidden = false;
-     if (values.length >= 2) {document.getElementById("dice2").src = `/$(values[1]).png`; document.getElementById("dice2").hidden = false};
-     if (values.length >= 3) {document.getElementById("dice3").src = `/$(values[2]).png`; document.getElementById("dice3").hidden = false};
+     if (values.length >= 2) {document.getElementById("dice2").src = `/${values[1]}.png`; document.getElementById("dice2").hidden = false};
+     if (values.length >= 3) {document.getElementById("dice3").src = `/${values[2]}.png`; document.getElementById("dice3").hidden = false};
   if (sides <= 10 && dice <= 3) {
   } else {
   document.getElementById("dice1").src = "/0.png";
