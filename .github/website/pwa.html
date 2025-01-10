@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <style>
 :root {
   --mdc-theme-primary: #FFFFFF;
@@ -13,6 +14,8 @@ html, body {
   color: white;
   background-color: #303030;
   overflow: hidden;
+  margin-top: 0px;
+  font-family: Roboto;
 }
 .bottom {
   position: absolute;
@@ -34,6 +37,7 @@ button {
   box-shadow: 0px 5px 10px black;
   position: relative;
   overflow: hidden;
+  font-family: Roboto;
 }
 button:hover {
   background: #7e7c7f;
@@ -46,7 +50,7 @@ button:hover {
   border-bottom: 1px solid white;
   transition: border-bottom 0.1s;
 }
-input:focus {
+.material_input:focus {
   outline-width: 0;
   border-bottom: 3px solid #7FCAC3;
 }
@@ -79,26 +83,59 @@ input:focus {
       }
   }
 .container {
-    min-height: 100vh;    
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+.center {
+display: flex;
+height: 100%;
+flex-direction: column;
+align-items: center;
+align-content: center;
+justify-content: center;
 }
 .footer {
     margin-top: auto;
+    justify-content: center;
+}
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* Not removed via appearance */
+  margin: 0;
+  padding: 5px;
+  max-height: 34px;
+}
+input[type="checkbox"]::before {
+  content: url("https://diceapp.swee.codes/unchecked.svg");
+}
+input[type="checkbox"]:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+input[type="checkbox"]:checked::before {
+  content: url("https://diceapp.swee.codes/checked.svg");
 }
 </style>
 </head>
 <body>
 <div class=container>
-<h1>Roll the dice!</h1>
+<div class=center>
+<h1 id=value>Roll the dice!</h1>
+</div>
 <div class=footer>
-<button class=btn>Roll</button>
+<center>
+<button class=btn onclick="generate();">ROLL</button>
 <br>
-Dice <input type="text" class="material_input"></input>
+Dice <input type="number" class="material_input" id=dice value=1></input>
 <br>
-Sides <input type="text" class="material_input"></input>
+Sides <input type="number" class="material_input" id=values value=6></input>
 <br>
-
+<input type="checkbox" id=images></input> <label for=images>Images</label>
+</center>
 </div>
 </div>
 <script>
@@ -114,6 +151,9 @@ btn.onclick = function (e) {
     setTimeout(() => {
         ripple.remove();
     }, 1000);
+};
+function generate() {
+  
 };
 </script>
 </body>
