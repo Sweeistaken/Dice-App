@@ -118,11 +118,16 @@ input[type="checkbox"]:checked::before {
 <body>
 <div class=container>
 <div class=center>
+<div class=horz>
+<img id=dice1 src="/0.png" hidden>
+<img id=dice2 src="/0.png" hidden>
+<img id=dice3 src="/0.png" hidden>
+</div>
 <h1 id=value>Roll the dice!</h1>
 </div>
 <div class=footer>
 <center>
-<button class=btn onclick="generate();">ROLL</button>
+<button class=btn id=rollbtn>ROLL</button>
 <br>
 Dice <input type="number" class="material_input" id=dice value=1></input>
 <br>
@@ -146,15 +151,36 @@ btn.onclick = function (e) {
         ripple.remove();
     }, 1000);
 };
-function generate() {
-  console.info("Generating new roll...");
+function gener() {
   let dice = document.getElementById("dice").value;
   let sides = document.getElementById("values").value;
+  let images = document.getElementById("images").checked;
   var text = "";
-  var value = Math.floor(Math.random() * (sides - 1) + min);
-  text += "${value} ";
+  var values = [];
+  for (let a = 0; a < dice; a++) {
+     var value = Math.floor(Math.random() * (sides - 1) + 1);
+     text += `${value} `;
+     values.push(value);
+  }
   document.getElementById("value").innerHTML = text;
+  document.getElementById("dice1").hidden = true;
+  document.getElementById("dice2").hidden = true;
+  document.getElementById("dice3").hidden = true;
+  if (images) {
+     document.getElementById("dice1").src = `/$(values[0]).png`;
+     document.getElementById("dice1").hidden = false;
+     if (values.length >= 2) {document.getElementById("dice2").src = `/$(values[1]).png`; document.getElementById("dice2").hidden = false};
+     if (values.length >= 3) {document.getElementById("dice3").src = `/$(values[2]).png`; document.getElementById("dice3").hidden = false};
+  if (sides <= 10 && dice <= 3) {
+  } else {
+  document.getElementById("dice1").src = "/0.png";
+  document.getElementById("dice1").hidden = false;
+  document.getElementById("dice2").hidden = true;
+  document.getElementById("dice3").hidden = true;
+  };
+  };
 };
+document.getElementById("rollbtn").addEventListener("click", gener);
 </script>
 </body>
 </html>
