@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+:root {
+  --mdc-theme-primary: #FFFFFF;
+  --mdc-theme-secondary: #7FCAC3;
+  --mdc-theme-on-surface: #FFFFFF;
+  --mdc-theme-on-primary: #FFFFFF;
+  --mdc-theme-on-secondary: #FFFFFF;
+}
+html, body {
+  color: white;
+  background-color: #303030;
+  overflow: hidden;
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+button {
+  color: white;
+  background: #59585A;
+  border: none;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 15px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.1s, box-shadow 0.1s;
+  box-shadow: 0px 5px 10px black;
+  position: relative;
+  overflow: hidden;
+}
+button:hover {
+  background: #7e7c7f;
+  box-shadow: 0px 9px 10px black;
+}
+.material_input {
+  color: white;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  transition: border-bottom 0.1s;
+}
+input:focus {
+  outline-width: 0;
+  border-bottom: 3px solid #7FCAC3;
+}
+  .btn span {
+      position: absolute;
+      border-radius: 50%;
+      /* To make it round */
+      background-color: rgba(255, 255, 255, 0.3);
+
+      width: 100px;
+      height: 100px;
+      margin-top: -50px;
+      /* for positioning */
+      margin-left: -50px;
+
+      animation: ripple 1s;
+      opacity: 0;
+  }
+
+  /* Add animation */
+  @keyframes ripple {
+      from {
+          opacity: 1;
+          transform: scale(0);
+      }
+
+      to {
+          opacity: 0;
+          transform: scale(10);
+      }
+  }
+.container {
+    min-height: 100vh;    
+    display: flex;
+    flex-direction: column;
+}
+.footer {
+    margin-top: auto;
+}
+</style>
+</head>
+<body>
+<div class=container>
+<h1>Roll the dice!</h1>
+<div class=footer>
+<button class=btn>Roll</button>
+<br>
+Dice <input type="text" class="material_input"></input>
+<br>
+Sides <input type="text" class="material_input"></input>
+<br>
+
+</div>
+</div>
+<script>
+const btn = document.querySelector(".btn");
+btn.onclick = function (e) {
+    let ripple = document.createElement("span");
+    ripple.classList.add("ripple");
+    this.appendChild(ripple);
+    let x = e.clientX - e.currentTarget.offsetLeft;
+    let y = e.clientY - e.currentTarget.offsetTop;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    setTimeout(() => {
+        ripple.remove();
+    }, 1000);
+};
+</script>
+</body>
+</html>
