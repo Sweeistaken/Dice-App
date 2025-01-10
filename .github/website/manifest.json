@@ -6,7 +6,7 @@
       "src": "/favicon.ico",
       "sizes": "1024x1024",
       "type": "image/png"
-    },
+    }
   ],
   "start_url": "/pwa.html",
   "display": "standalone",
