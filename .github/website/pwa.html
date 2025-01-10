@@ -158,7 +158,7 @@ function gener() {
   var text = "";
   var values = [];
   for (let a = 0; a < dice; a++) {
-     var value = Math.floor(Math.random() * (sides - 1) + 1);
+     var value = Math.floor(Math.random() * (sides) + 1);
      text += `${value} `;
      values.push(value);
   }
