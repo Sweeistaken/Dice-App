@@ -4,13 +4,6 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
   <link rel="manifest" href="/manifest.json" />
   <style>
-:root {
-  --mdc-theme-primary: #FFFFFF;
-  --mdc-theme-secondary: #7FCAC3;
-  --mdc-theme-on-surface: #FFFFFF;
-  --mdc-theme-on-primary: #FFFFFF;
-  --mdc-theme-on-secondary: #FFFFFF;
-}
 html, body {
   color: white;
   background-color: #303030;
@@ -154,7 +147,11 @@ btn.onclick = function (e) {
     }, 1000);
 };
 function generate() {
-  
+  let dice = document.getElementById("dice").value
+  let sides = document.getElementById("values").value
+  var text = ""
+  var value = Math.floor(Math.random() * (sides - 1) + min)
+  text += "${value} "
 };
 </script>
 </body>
