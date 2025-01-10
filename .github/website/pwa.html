@@ -10,6 +10,7 @@ html, body {
   overflow: hidden;
   margin-top: 0px;
   font-family: Roboto;
+  font-size: 18pt;
 }
 .bottom {
   position: absolute;
@@ -32,6 +33,7 @@ button {
   position: relative;
   overflow: hidden;
   font-family: Roboto;
+  font-size: 18pt;
 }
 button:hover {
   background: #7e7c7f;
@@ -43,6 +45,7 @@ button:hover {
   border: none;
   border-bottom: 1px solid white;
   transition: border-bottom 0.1s;
+  font-size: 18pt;
 }
 .material_input:focus {
   outline-width: 0;
@@ -131,9 +134,13 @@ input[type="checkbox"]:checked::before {
 <br>
 Dice <input type="number" class="material_input" id=dice value=1></input>
 <br>
+<br>
 Sides <input type="number" class="material_input" id=values value=6></input>
 <br>
+<br>
 <input type="checkbox" id=images></input> <label for=images>Images</label>
+<br>
+<p>You must have 3-1 dice and 10-1 sides to use images.</p>
 </center>
 </div>
 </div>
