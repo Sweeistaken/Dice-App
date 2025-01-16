@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.pythonanywhere.swee.diceapp'
-    compileSdk 33
+    compileSdk 35
 
     defaultConfig {
         applicationId "codes.swee.diceapp"
         minSdk 19
-        targetSdk 33
+        targetSdk 35
         versionCode 7
         versionName "1.3"
 
