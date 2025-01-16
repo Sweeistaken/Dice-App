@@ -23,7 +23,7 @@ jobs:
     - name: Allowing permissions
       run: chmod +x gradlew
     - name: Build
-      run: ./gradlew clean assembleDebug --debug --info --stacktrace
+      run: ./gradlew clean assembleDebug --stacktrace
     - name: Stop daemon
       run: ./gradlew --stop
     - name: Moving built APK
