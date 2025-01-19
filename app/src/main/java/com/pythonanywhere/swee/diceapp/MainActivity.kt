@@ -81,9 +81,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 resultTextView.text = result
             }catch(e: NoSuchElementException){
-                toast(getString(R.string.sideserror))
+                toast(getString(R.string.sidesError))
             }catch(e: java.lang.NumberFormatException){
-                toast(getString(R.string.diceerror))
+                toast(getString(R.string.diceError))
             }
         }
     }
