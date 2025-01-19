@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val image: ImageView = findViewById(R.id.imageView)
         val image2: ImageView = findViewById(R.id.imageView2)
         val image3: ImageView = findViewById(R.id.imageView3)
-        val imgCheckBox: Switch = findViewById(R.id.switch1)
+        val imgCheckBox: CheckBox = findViewById(R.id.switch1)
         val diceImages = listOf(R.drawable.one,R.drawable.two,R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six,R.drawable.seven,R.drawable.eight,R.drawable.nine,R.drawable.ten) //maps all the Dice images
         rollButton.setOnClickListener {
             try {
