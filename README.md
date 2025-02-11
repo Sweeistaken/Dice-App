@@ -1,5 +1,9 @@
 # Dice App
 
+> [!WARNING]
+>
+> This project is complete, I will work on a rewrite of this app using JetPack Compose and Material3.
+
 <img alt="A simple Dice Roller for Android" src="https://img.shields.io/badge/A%20simple%20Dice%20Roller%20for-Android-green?style=flat-square&logo=android">
 
 <img src="https://img.shields.io/github/license/sweeistaken/Dice-App?123"/> <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/sweeistaken/Dice-App/total?123">
