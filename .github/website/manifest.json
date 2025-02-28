@@ -3,12 +3,12 @@
   "name": "Dice App",
   "icons": [
     {
-      "src": "/favicon.ico",
+      "src": "/apps/diceapp/favicon.ico",
       "sizes": "1024x1024",
       "type": "image/png"
     }
   ],
-  "start_url": "/pwa.html",
+  "start_url": "/apps/diceapp/pwa",
   "display": "standalone",
   "theme_color": "#303030",
   "background_color": "#303030"
