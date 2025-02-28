@@ -2,7 +2,7 @@
 <html>
 <head>
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-  <link rel="manifest" href="/manifest.json" />
+  <link rel="manifest" href="/apps/diceapp/manifest.json" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
 html, body {
@@ -109,7 +109,7 @@ input[type="checkbox"] {
   transition: background 0.1s;
 }
 input[type="checkbox"]::before {
-  content: url("https://diceapp.swee.codes/unchecked.svg");
+  content: url("unchecked.svg");
 }
 input[type="checkbox"]:hover {
   background: rgba(255, 255, 255, 0.3);
@@ -120,7 +120,7 @@ input[type="checkbox"]:active {
   border-radius: 50%;
 }
 input[type="checkbox"]:checked::before {
-  content: url("https://diceapp.swee.codes/checked.svg");
+  content: url("checked.svg");
 }
 </style>
 </head>
@@ -128,9 +128,9 @@ input[type="checkbox"]:checked::before {
 <div class=container>
 <div class=center>
 <div class=horz>
-<img id=dice1 src="/0.png" hidden>
-<img id=dice2 src="/0.png" hidden>
-<img id=dice3 src="/0.png" hidden>
+<img id=dice1 src="0.png" hidden>
+<img id=dice2 src="0.png" hidden>
+<img id=dice3 src="0.png" hidden>
 </div>
 <h1 id=value>Roll the dice!</h1>
 </div>
@@ -180,13 +180,13 @@ function gener() {
   document.getElementById("dice2").hidden = true;
   document.getElementById("dice3").hidden = true;
   if (images) {
-     document.getElementById("dice1").src = `/${values[0]}.png`;
+     document.getElementById("dice1").src = `${values[0]}.png`;
      document.getElementById("dice1").hidden = false;
-     if (values.length >= 2) {document.getElementById("dice2").src = `/${values[1]}.png`; document.getElementById("dice2").hidden = false};
-     if (values.length >= 3) {document.getElementById("dice3").src = `/${values[2]}.png`; document.getElementById("dice3").hidden = false};
+     if (values.length >= 2) {document.getElementById("dice2").src = `${values[1]}.png`; document.getElementById("dice2").hidden = false};
+     if (values.length >= 3) {document.getElementById("dice3").src = `${values[2]}.png`; document.getElementById("dice3").hidden = false};
   if (sides <= 10 && dice <= 3) {
   } else {
-  document.getElementById("dice1").src = "/0.png";
+  document.getElementById("dice1").src = "0.png";
   document.getElementById("dice1").hidden = false;
   document.getElementById("dice2").hidden = true;
   document.getElementById("dice3").hidden = true;
