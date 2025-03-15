@@ -2,7 +2,9 @@
 
 > [!WARNING]
 >
-> This project is complete, I will work on a rewrite of this app using JetPack Compose and Material3.
+> This project is complete, version 1.4 will be a rewrite using JetPack Compose and Material3.
+>
+> Dice App 1.4 and beyond will be moved to https://git.swee.codes/swee/Dice-App-M3
 
 <img alt="A simple Dice Roller for Android" src="https://img.shields.io/badge/A%20simple%20Dice%20Roller%20for-Android-green?style=flat-square&logo=android">
 
