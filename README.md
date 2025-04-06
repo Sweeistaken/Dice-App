@@ -12,5 +12,10 @@
 <img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/sweeistaken/Dice-App/build.yml?123">
 <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/Sweeistaken/Dice-App?123">
 
-<img alt="The screenshot of Dice App on a Galaxy Tab 3." width="30%" src="https://github.com/Sweeistaken/Dice-App/assets/120145778/c7ab79ab-54e1-4db7-bfd7-5168644a7f1f"></img>
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/codes.swee.diceapp/)
 
+Or download the latest APK from the [Releases Section](https://github.com/Sweeistaken/Dice-App/releases/latest).
+
+<img alt="The screenshot of Dice App on a Galaxy Tab 3." width="30%" src="https://github.com/Sweeistaken/Dice-App/assets/120145778/c7ab79ab-54e1-4db7-bfd7-5168644a7f1f"></img>
